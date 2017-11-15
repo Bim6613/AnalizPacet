@@ -94,7 +94,7 @@ void Pcapop::Fopene()
         Packet temp;
         QByteArray data1;
         pcaprec_hdr_s tempH;
-        temp.getheders();
+
         if(res == 0)
             continue;
         t++;

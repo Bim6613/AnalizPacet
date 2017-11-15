@@ -106,22 +106,12 @@
      <string>Exit</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>10</y>
-      <width>341</width>
-      <height>291</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEdit_4">
     <property name="geometry">
      <rect>
       <x>470</x>
       <y>330</y>
-      <width>51</width>
+      <width>61</width>
       <height>20</height>
      </rect>
     </property>
@@ -150,6 +140,16 @@
     </property>
     <property name="text">
      <string>№ PACET</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>331</width>
+      <height>291</height>
+     </rect>
     </property>
    </widget>
   </widget>
