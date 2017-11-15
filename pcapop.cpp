@@ -17,12 +17,12 @@ Packet::Packet()
     heders.caplen=0;
     heders.len=0;
 
-    qDebug() << "Constructor started!";
+
 }
 Packet::~Packet()
 {
 
-    qDebug() << "DEConstructor started!";
+
 }
 Packet::Packet(const Packet &p)
 {
@@ -86,6 +86,10 @@ void Pcapop::Fopene()
         return;
     const char *cName = fName.toStdString().c_str();
     pcap_t *GOD=pcap_open_offline(cName,error);
+    if (GOD == NULL) {
+          qDebug << "pcap_open_offline() failed: " << error << endl;
+          return 1;
+      }
     int res;
     int tempbit=40;
     file.read((char *)&pacdata.filehd,24);
