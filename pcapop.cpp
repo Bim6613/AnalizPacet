@@ -87,8 +87,8 @@ void Pcapop::Fopene()
     const char *cName = fName.toStdString().c_str();
     pcap_t *GOD=pcap_open_offline(cName,error);
     if (GOD == NULL) {
-          qDebug << "pcap_open_offline() failed: " << error << endl;
-          return 1;
+          qDebug() << error ;
+
       }
     int res;
     int tempbit=40;
