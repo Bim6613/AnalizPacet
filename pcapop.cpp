@@ -148,23 +148,27 @@ void Pcapop::Fopene()
 
 void Pcapop::PushContent()
 {
-    QString trys;
+    int t=0;
+
     QString num =ui->lineEdit_4->text();
     qDebug()<<num;
     int numb=num.toInt()-1;
-    num.prepend("Pacet №  ");
-    ui->textEdit->append(num);
     num.clear();
     QByteArray* temp=pacdata.packets[numb].getdata();
     num.append(temp->toHex());
     qint32* temp2=pacdata.packets[numb].getLen();
-    for(int i=0,j=0;i<*temp2*2;i++,j++)
+    QStandardItem *item;
+    QStandardItemModel *model = new QStandardItemModel(t,16,this);
+    for(int i=0,j=0,y=0;i<*temp2;i=i+2,j++)
     {
-        if(i%2==0)
-        {trys[j]=' ';
-            j++;
+        if(j==16)
+        {
+            j=0;
+            y++;
         }
-        trys[j]=num[i];
+        item = new QStandardItem(QString(num.mid(i,2)));
+        model->setItem(y, j, item);
+
     }
-    ui->textEdit->append(trys);
+    ui->tableView_2->setModel(model);
 }
