@@ -88,7 +88,7 @@ void Pcapop::Fopene()
     pcap_t *GOD=pcap_open_offline(cName,error);
     if (GOD == NULL) {
           qDebug() << error ;
-
+            return ;
       }
     int res;
     int tempbit=40;

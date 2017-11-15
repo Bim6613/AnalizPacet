@@ -142,7 +142,7 @@
      <string>№ PACET</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tableView_2">
+   <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
       <x>380</x>
